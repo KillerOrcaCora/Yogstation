@@ -1,7 +1,6 @@
 /*	Pens!
  *	Contains:
  *		Pens
- *		Sleepy Pens
  *		Parapens
  *		Edaggers
  */
@@ -148,32 +147,7 @@
 			O.desc = input
 			to_chat(user, "You have successfully changed \the [O.name]'s description.")
 
-/*
- * Sleepypens
- */
 
-/obj/item/pen/sleepy/attack(mob/living/M, mob/user)
-	if(!is_syndicate(user)) // if non syndicate , it is just a regular pen as they don't know how to activate hidden payload.
-		. = ..()
-		return
-	if(!istype(M))
-		return
-
-	if(..())
-		if(reagents.total_volume)
-			if(M.reagents)
-				reagents.reaction(M, INJECT, reagents.total_volume)
-				reagents.trans_to(M, reagents.total_volume, transfered_by = user)
-
-
-/obj/item/pen/sleepy/Initialize()
-	. = ..()
-	create_reagents(75)
-	reagents.add_reagent(/datum/reagent/toxin/chloralhydrate, 20)
-	reagents.add_reagent(/datum/reagent/toxin/mutetoxin, 15)
-	reagents.add_reagent(/datum/reagent/toxin/staminatoxin, 10)
-	reagents.add_reagent(/datum/reagent/toxin/pancuronium, 7)
-	reagents.add_reagent(/datum/reagent/toxin/sodium_thiopental, 23)
 
 /*
  * (Alan) Edaggers
