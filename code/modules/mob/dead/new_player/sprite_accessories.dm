@@ -2203,3 +2203,7 @@
 /datum/sprite_accessory/ethereal_mark/x
 	name = "X"
 	icon_state = "x"
+
+/datum/sprite_accessory/felind_ears/droopy
+    name = "droopy"
+	icon_state = "droopy"
