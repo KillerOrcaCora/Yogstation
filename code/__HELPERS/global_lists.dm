@@ -37,6 +37,7 @@
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/dome, GLOB.dome_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/dorsal_tubes, GLOB.dorsal_tubes_list)
 	init_sprite_accessory_subtypes(/datum/sprite_accessory/ethereal_mark, GLOB.ethereal_mark_list)
+	init_sprite_accessory_subtypes(/datum/sprite_accessory/droopy_ears, GLOB.felind_ears_list)
 
 
 	//Species
