@@ -4,8 +4,8 @@
 	id = "felinid"
 	limbs_id = "human"
 
-	mutant_bodyparts = list("ears", "tail_human")
-	default_features = list("mcolor" = "FFF", "tail_human" = "Cat", "ears" = "Cat", "wings" = "None")
+	mutant_bodyparts = list("ears", "tail_human", "felind-ears")
+	default_features = list("mcolor" = "FFF", "tail_human" = "Cat", "ears" = "Cat", "wings" = "None", "felind_ears" = "Eyes")
 	rare_say_mod = list("meows"= 10)
 	liked_food = SEAFOOD | DAIRY
 	toxic_food = TOXIC | CHOCOLATE
