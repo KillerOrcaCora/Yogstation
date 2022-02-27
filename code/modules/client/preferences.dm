@@ -564,7 +564,21 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 				if(mutant_category >= MAX_MUTANT_ROWS)
 					dat += "</td>"
 					mutant_category = 0
+             
+			if("felind_ears") in pref_species.default_features)
+			    if(!mutant_catergory)
+				    dat += APPEARANCE_CATEGORY_COLUMN
+				
+				dat += "<h3>Felind Ears</h3>"
+				
+				dat += "<a href='?_src_=prefs;preference=felind_ears;task=input'>[features["felind_ears"]]</a>"
+				dat += "<a href ='?_src_=prefs;preference=felind_ears;task=lock'>[random_locks["felind_ears"] ? "Unlock" : "Lock"]</a><BR>"
 
+				mutant_category++
+				if(mutant_category >= MAX-MUTANT_COLUMN)
+			       dat += "</td>"
+					mutant_category = 0
+                
 			if("tail_human" in pref_species.default_features)
 				if(!mutant_category)
 					dat += APPEARANCE_CATEGORY_COLUMN
@@ -1398,6 +1412,7 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 						"dome" = 1,
 						"dorsal_tubes" = 1,
 						"ethereal_mark" = 1,
+						"felind_ears" = 1,
 					)
 				if("gender")
 					random_locks["random_locks"] = gender
@@ -1694,6 +1709,12 @@ GLOBAL_LIST_EMPTY(preferences_datums)
 					if(new_ethereal_mark)
 						features["ethereal_mark"] = new_ethereal_mark
 
+                if("felind_ears")
+				    var/new_felind_ears
+					new_felind_ears =  input(user, "Choose if your character has felind ears", "Character Preference") as null|anything in GLOB.ethereal_mark_list
+                    if(new_felind_ears
+					    features["felind_ears"] = new_felind_ears
+				
 				if("s_tone")
 					var/new_s_tone = input(user, "Choose your character's skin-tone:", "Character Preference")  as null|anything in GLOB.skin_tones
 					if(new_s_tone)
