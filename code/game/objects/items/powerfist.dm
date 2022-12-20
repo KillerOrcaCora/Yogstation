@@ -2,6 +2,7 @@
 	name = "power-fist"
 	desc = "A metal gauntlet with a piston-powered ram ontop for that extra 'ompfh' in your punch."
 	icon = 'icons/obj/traitor.dmi'
+	
 	icon_state = "powerfist"
 	item_state = "powerfist"
 	lefthand_file = 'icons/mob/inhands/weapons/melee_lefthand.dmi'
@@ -82,12 +83,14 @@
 	T.air_update_turf()
 	if(!gasused)
 		to_chat(user, span_warning("\The [src]'s tank is empty!"))
+		flick("powerfistmove", src)
 		target.apply_damage((force / 5), BRUTE)
 		playsound(loc, 'sound/weapons/punch1.ogg', 50, 1)
 		target.visible_message(span_danger("[user]'s powerfist lets out a dull thunk as [user.p_they()] punch[user.p_es()] [target.name]!"), \
 			span_userdanger("[user]'s punches you!"))
 		return
 	if(gasused.total_moles() < gasperfist * fisto_setting)
+	    flick("powerfistmove", src)
 		to_chat(user, span_warning("\The [src]'s piston-ram lets out a weak hiss, it needs more gas!"))
 		playsound(loc, 'sound/weapons/punch4.ogg', 50, 1)
 		target.apply_damage((force / 2), BRUTE)
